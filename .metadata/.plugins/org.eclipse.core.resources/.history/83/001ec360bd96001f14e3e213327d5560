@@ -1,0 +1,30 @@
+package p11724connected;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int[] parents = new int[1_001];
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p11724connected/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	}
+	
+	private static void union(int nodeA, int nodeB) {
+		nodeA = find(nodeA);
+		nodeB = find(nodeB);
+		
+		if (nodeA != nodeB) {
+			parents[nodeB] = nodeA;
+		}
+	}
+	
+	private static int find(int node) {
+		if (parents[node] == node) {
+			return parents[node];
+		}
+		
+		return parents[node] = find(parents[node]);
+	}
+}

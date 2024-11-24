@@ -1,0 +1,65 @@
+package p1954snailnumber;
+
+import java.io.*;
+
+public class Solution {
+	private static int[] dR = {0, 1, 0, -1}, dC = {1, 0, -1, 0};
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1954snailnumber/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int T = Integer.parseInt(br.readLine());
+		StringBuilder builder = new StringBuilder();
+		
+		for (int tc = 1; tc < T + 1; tc++) {
+			int N = Integer.parseInt(br.readLine());
+			int[][] index = new int[N * N][2];
+			
+			search(0, 0, 0, N, index);
+			
+			int[][] result = new int[N][N];
+			for (int i = 0; i < N * N; i++) {
+				result[index[i][0]][index[i][1]] = i + 1;
+			}
+			builder.append("#").append(tc).append("\n");
+			
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < N; j++) {
+					builder.append(result[i][j]).append(" ");
+				}
+				builder.append("\n");
+			}
+		}
+		
+		bw.write(builder.toString());
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+	
+	private static void search(int row, int column, int count, int N, int[][] index) {
+		if (N < 0) {
+			return;
+		}
+		
+		if (N == 1) {
+			index[count][0] = row;
+			index[count][1] = column;
+			return;
+		}
+		
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < N - 1; j++) {
+				index[count][0] = row;
+				index[count][1] = column;
+				row += dR[i];
+				column += dC[i];
+				count++;
+			}
+		}
+		
+		search(row + 1, column + 1, count, N - 2, index);
+	}
+}

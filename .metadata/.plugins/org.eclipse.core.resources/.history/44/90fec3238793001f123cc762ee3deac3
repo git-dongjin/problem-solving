@@ -1,0 +1,19 @@
+package p2164card2;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p2164card2/input.txt"));
+	}
+}
+
+class Queue {
+	
+}
+
+class Node {
+	
+}

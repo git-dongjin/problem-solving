@@ -1,0 +1,29 @@
+package p1697hideandseek;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class Main {
+	private static final int INF = 100_001;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1697hideandseek/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(tokenizer.nextToken());
+		int K = Integer.parseInt(tokenizer.nextToken());
+		
+		int[] dp = new int[INF];
+		Arrays.fill(dp, INF);
+		dp[N] = 0;
+		
+		IntStream.range(1, INF).forEach(i -> {
+			if (N + i < INF) {
+				dp[N + i] = Math.min(dp[N + i], dp[N + i - 1] );
+			}
+		});
+	}
+}

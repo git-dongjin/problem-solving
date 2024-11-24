@@ -1,0 +1,23 @@
+package p3184sheep;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int R, C;
+	private static List<int[]> areas;
+	private static int[][] map;
+	private static boolean[][] visited;
+	private static Queue<int[]> queue = new LinkedList<>();
+	private static int[] dX = {-1, 1, 0, 0}, dY = {0, 0, -1, 1};
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p3184sheep/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(tokenizer.nextToken());
+		C = Integer.parseInt(tokenizer.nextToken());
+	}
+}

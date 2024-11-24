@@ -1,0 +1,32 @@
+package p1697hideandseek;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+	private static int size = 100_001;
+	private static Queue<int[]> queue = new LinkedList<>();
+	private static boolean[] visited;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1697hideandseek/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(tokenizer.nextToken());
+		int K = Integer.parseInt(tokenizer.nextToken());
+		
+		visited = new boolean[size];
+		
+		queue.add(new int[] {N, 0});
+		
+		int answer = bfs();
+		
+		bw.write(String.valueOf(dp[K]));
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+}

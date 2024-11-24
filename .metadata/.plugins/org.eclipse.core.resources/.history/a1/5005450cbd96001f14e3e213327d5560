@@ -1,0 +1,29 @@
+package p11724connected;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int[] parents;
+	
+	public static void main(String[] args) {
+		System.setIn(new FileInputStream("src/p11724connected/input.txt"));
+	}
+	
+	private static void union(int nodeA, int nodeB) {
+		nodeA = find(nodeA);
+		nodeB = find(nodeB);
+		
+		if (nodeA != nodeB) {
+			parents[nodeB] = nodeA;
+		}
+	}
+	
+	private static int find(int node) {
+		if (parents[node] == node) {
+			return parents[node];
+		}
+		
+		return parents[node] = find(parents[node]);
+	}
+}

@@ -1,0 +1,37 @@
+package p1012cabbage;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N, M, K;
+	private static int[][] map;
+	private static boolean[][] visited;
+	private static int[][] cabbages;
+	private static Queue<int[]> queue = new LinkedList<>();
+	private static int[] dX = {-1, 1, 0, 0}, dY = {0, 0, -1, 1};
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1012cabbage/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int T = Integer.parseInt(br.readLine());
+		
+		for (int tc = 0; tc < T; tc++) {
+			StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+			M = Integer.parseInt(tokenizer.nextToken());
+			N = Integer.parseInt(tokenizer.nextToken());
+			K = Integer.parseInt(tokenizer.nextToken());
+			
+			map = new int[N][M];
+			visited = new boolean[N][M];
+			cabbages = new int[K][];
+			
+			for (int i = 0; i < K; i++) {
+				tokenizer = new StringTokenizer(br.readLine());
+				int column = Integer.parseInt(tokenizer.nextToken());
+			}
+		}
+	}
+}

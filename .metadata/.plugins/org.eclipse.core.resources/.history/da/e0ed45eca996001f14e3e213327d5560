@@ -1,0 +1,43 @@
+package p2805tree;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p2805tree/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(tokenizer.nextToken());
+		int M = Integer.parseInt(tokenizer.nextToken());
+		
+		long[] trees = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray();
+		
+		long left = 0L;
+		long right = 1_000_000_001L;
+        long mid = (left + right) / 2L;
+		
+		while(left <= right) {
+			long center = (left + right) / 2L;
+			mid = center;
+			
+			long cut = Arrays.stream(trees).reduce(0L, (acc, tree) -> acc + Math.max(0L, tree - center));
+			
+			if(cut < M) {
+				right = mid - 1;
+			} else if(cut > M) {
+				left = mid + 1;
+			} else {
+                break;
+            }
+		}
+		
+		bw.write(String.valueOf(mid));
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+}

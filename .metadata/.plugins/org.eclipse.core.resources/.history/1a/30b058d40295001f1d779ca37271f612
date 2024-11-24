@@ -1,0 +1,24 @@
+package p7576tomato;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p7576tomato/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		int M = Integer.parseInt(tokenizer.nextToken());
+		int N = Integer.parseInt(tokenizer.nextToken());
+		
+		int[][] map = new int[N][];
+		boolean[][] visited = new boolean[N][M];
+		
+		for (int i = 0; i < N; i++) {
+			map[i] = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+		}
+	}
+}

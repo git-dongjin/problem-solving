@@ -1,0 +1,20 @@
+package p1697hideandseek;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static final int INF = 100_000;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1697hideandseek/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(tokenizer.nextToken());
+		int K = Integer.parseInt(tokenizer.nextToken());
+		
+		int[] dp = new int[INF + 1];
+	}
+}

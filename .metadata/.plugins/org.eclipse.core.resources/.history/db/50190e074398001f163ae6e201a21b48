@@ -1,0 +1,45 @@
+package p10971tsp;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N;
+	private static long answer;
+	private static List<int[]>[] adList;
+	private static boolean[] visited;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p10971tsp/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		N = Integer.parseInt(br.readLine());
+		
+		visited = new boolean[N];
+		
+		adList = new List[N];
+		for (int i = 0; i < N; i++) {
+			int[] line = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+			
+			for (int j = 0; j < N; j++) {
+				if (line[j] != 0) {
+					adList[i].add(new int[] {j, line[j]});
+				}
+			}
+		}
+		
+		for (int i = 0; i < N; i++) {
+			dfs(i, 0L);
+		}
+		
+		bw.write(String.valueOf(answer));
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+	
+	private static void dfs(int nowNode, long dist) {
+		
+	}
+}

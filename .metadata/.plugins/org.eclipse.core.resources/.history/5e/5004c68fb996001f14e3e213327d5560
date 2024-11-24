@@ -1,0 +1,16 @@
+package p2606virus;
+
+import java.io.*;
+import java.util.*;
+
+public class BFS {
+	private static int answer;
+	private static List<Integer>[] adList;
+	private static boolean[] visited;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p2606virus/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	}
+}

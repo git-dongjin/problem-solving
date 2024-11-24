@@ -1,0 +1,15 @@
+package p1012cabbage;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N, M, K;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1012cabbage/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+	}
+}

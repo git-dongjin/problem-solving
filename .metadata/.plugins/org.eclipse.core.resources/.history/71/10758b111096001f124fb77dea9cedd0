@@ -1,0 +1,15 @@
+package p11723set;
+
+import java.io.*;
+import java.util.*;
+
+public class Main2 {
+
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p11723set/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		Set<Integer> set = new HashSet<>();
+	}
+}
