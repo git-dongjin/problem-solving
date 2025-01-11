@@ -1,0 +1,18 @@
+package p14503robot;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N, M;
+	private static int[] robot;
+	private static int[][] map;
+	private static boolean[][] visited;
+	private static int[] dY = {-1, 0, 1, 0}, dX = {0, 1, 0, -1};
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p14503robot/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	}
+}

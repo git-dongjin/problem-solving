@@ -1,0 +1,8 @@
+package p14503robot;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+}
