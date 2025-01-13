@@ -1,0 +1,31 @@
+package p4485zelda;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N;
+	private static PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> Integer.compare(o1[2], o2[2]));
+	private static int[][] map, distance;
+	private static boolean[][] visited;
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p4485zelda/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int index = 1;
+		
+		while (true) {
+			N = Integer.parseInt(br.readLine());
+			
+			if (N == 0) {
+				break;
+			}
+		}
+		
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+}

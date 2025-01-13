@@ -1,0 +1,34 @@
+package p11279maxheap;
+
+public class Main2 {
+
+}
+
+class MaxHeap {
+	private int[] tree;
+	private int size;
+	
+	public MaxHeap(int capacity) {
+		this.tree = new int[capacity + 1];
+	}
+	
+	public void add(int element) {
+		int index = ++size;
+		tree[index] = element;
+		
+		while (index / 2 > 0 && tree[index] > tree[index / 2]) {
+			int temp = tree[index];
+			tree[index] = tree[index / 2];
+			tree[index / 2] = temp;
+			index /= 2;
+		}
+	}
+	
+	public int poll() {
+		if (size == 0) {
+			return 0;
+		}
+		
+		int ret = tree[size];
+	}
+}

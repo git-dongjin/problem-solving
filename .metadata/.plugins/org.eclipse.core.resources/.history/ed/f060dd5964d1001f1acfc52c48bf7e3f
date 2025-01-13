@@ -1,0 +1,16 @@
+package p1647citydivide;
+
+import java.io.*;
+import java.util.*;
+
+public class Main2 {
+	private static int N, M, edgeCount, result;
+	private static List[] adList;
+	private static boolean[] visited;
+	private static PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1647citydivide/input.txt"));
+		
+	}
+}

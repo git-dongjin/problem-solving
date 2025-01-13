@@ -1,0 +1,11 @@
+package p4485zelda;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N;
+	private static PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> Integer.compare(o1[2], o2[2]));
+	private static int[][] map, distance;
+	private static boolean[][] visited;
+}

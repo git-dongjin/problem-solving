@@ -1,0 +1,42 @@
+package p1647citydivide;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int N, M, edgeCount, result;
+	private static Integer[] parents;
+	private static PriorityQueue<Integer[]> edgeList = new PriorityQueue<>((o1, o2) -> o1[2] - o2[2]);
+	private static PriorityQueue<Integer> minEdges = new PriorityQueue<>(Comparator.reverseOrder());
+	
+	public static void main(String[] args) throws IOException {
+		System.setIn(new FileInputStream("src/p1647citydivide/input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		StringTokenizer tokenizer = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(tokenizer.nextToken());
+		M = Integer.parseInt(tokenizer.nextToken());
+		
+		parents = new Integer[N + 1];
+		for (int i = 0; i < N + 1; i++) {
+			parents[i] = i;
+		}
+		
+		for (int i = 0; i < M; i++) {
+			edgeList.add(Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).boxed().toArray(Integer[]::new));
+		}
+	}
+	
+	private static void union(Integer nodeA, Integer nodeB) {
+		
+	}
+	
+	private static Integer find(Integer node) {
+		if (parents[node] == node) {
+			return parents[node];
+		}
+		
+		return parents[node] = find(parents[node]);
+	}
+}

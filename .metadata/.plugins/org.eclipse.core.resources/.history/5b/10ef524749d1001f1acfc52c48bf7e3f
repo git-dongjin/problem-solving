@@ -1,0 +1,11 @@
+package p1197mst;
+
+import java.io.*;
+import java.util.*;
+
+public class Main2 {
+	private static int V, E, edgeCount, result;
+	private static PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
+	private static List<int[]>[] adList;
+	private static boolean[] visited;
+}

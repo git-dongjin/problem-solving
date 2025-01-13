@@ -1,0 +1,10 @@
+package p1197mst;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static int V, E, edgeCount;
+	private static PriorityQueue<int[]> edgeList = new PriorityQueue<>((o1, o2) -> o1[2] - o2[2]);
+	
+}

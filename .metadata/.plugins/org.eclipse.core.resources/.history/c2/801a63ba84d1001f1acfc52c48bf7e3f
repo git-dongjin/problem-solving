@@ -1,0 +1,9 @@
+package p1753mindistance;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private static final int INF = 10 * 300_000 + 1;
+	private static int V, E, K;
+}
