@@ -1,9 +1,0 @@
-package p1647citydivide;
-
-import java.io.*;
-import java.util.*;
-
-public class Main {
-	private static int N, M, edgeCount, result;
-	private static PriorityQueue<Integer[]>
-}
