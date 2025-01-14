@@ -1,17 +1,9 @@
 .metadata/*
 BOJ/.settings/*
 BOJ/bin/*
-BOJ/.classpath
-BOJ/.project
 Programmers/.settings/*
 Programmers/bin/*
-Programmers/.classpath
-Programmers/.project
 SeSAC/.settings/*
 SeSAC/bin/*
-SeSAC/.classpath
-SeSAC/.project
 SWEA/.settings/*
 SWEA/bin/*
-SWEA/.classpath
-SWEA/.project
